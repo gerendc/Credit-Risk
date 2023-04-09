@@ -26,6 +26,17 @@ custom_params = {"axes.spines.right": False, "axes.spines.top": False}
 sns.set_theme(style="ticks", rc=custom_params, palette='tab10')
 
 # ------------------------------------------------------------------------------------------------------------- #
+# Histogram Plot
+def plotHistogram(data, x, xlabel, ylabel, title):
+    plt.figure()
+    ax = sns.histplot(data=data, x=x, kde=True)
+    ax.set_title(title)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    
+    return ax
+
+# ------------------------------------------------------------------------------------------------------------- #
 # Cross validation Models
 def checkModel(models, X, y, kfold, metric='f1'):
     model_name = []
